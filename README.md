@@ -64,7 +64,7 @@ In case there is not enough money on the user's balance, the result will be:
 Error! Not enough money!
 ```
 
-In case of successful money reservation:
+In case of successful money transfer:
 ```
 Success! Money transferred!
 ```
