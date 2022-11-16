@@ -64,7 +64,7 @@ In case there is not enough money on the user's balance, the result will be:
 Error! Not enough money!
 ```
 
-In case of successful money transfer:
+In case of successful money reservation:
 ```
 Success! Money transferred!
 ```
@@ -81,4 +81,24 @@ Body example:
         "id" : 1
     }
 ```
+Reply will look like:
+```JSON
+{
+    "balance": 1000,
+    "id": 1
+}
+```
+### Getting user's operations report
+Via this __POST__-request we can get a report containing all the operations of a specific user:
+```http request
+http://localhost:8080/billing-api/GetUserReport
+```
 
+Body example:
+```JSON
+    {
+        "Id" : 2,
+        "Month" : 11,
+        "Year" : 2022
+    }
+```

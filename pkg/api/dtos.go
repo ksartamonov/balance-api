@@ -16,3 +16,9 @@ type JsonTransfer struct {
 type JsonBalance struct {
 	Money int `json:"Money"`
 }
+
+type JsonReport struct {
+	Id    int `json:"Id"`
+	Month int `json:"Month"`
+	Year  int `json:"Year"`
+}

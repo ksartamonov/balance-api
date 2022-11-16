@@ -7,6 +7,15 @@ CREATE TABLE IF NOT EXISTS users
     reserved     INT     DEFAULT 0
 );
 
+CREATE TABLE IF NOT EXISTS operations
+(
+    OperationId         SERIAL,
+    SenderId            INT         DEFAULT 0,
+    ReceiverId          INT         DEFAULT 0,
+    Money               INT         DEFAULT 0,
+    TransactionTime     TIMESTAMP
+);
+
 INSERT INTO users (name, cardNumber)
 VALUES ('Ivan', '1111 1111 1111 1111'),
        ('Artem', '2222 2222 2222 2222'),
