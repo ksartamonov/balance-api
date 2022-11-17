@@ -100,6 +100,9 @@ Reply will look like:
 }
 ```
 ### Getting user's operations report
+To generate the report, the __operations__ table will be used, containing information about all operations of all users. The table looks something like this:
+![operations](https://github.com/ksartamonov/balance-api/blob/master/images/operations-table.png)
+
 Via this __POST__-request we can get a CSV-report containing all the operations of a specific user:
 ```http request
 http://localhost:8080/billing-api/GetUserReport
@@ -112,4 +115,9 @@ Body example:
         "Month" : 11,
         "Year" : 2022
     }
+```
+
+Result will be available on address: 
+```http
+localhost:9191/report.csv
 ```
