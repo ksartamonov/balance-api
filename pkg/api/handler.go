@@ -1,6 +1,7 @@
 package api
 
 import (
+	"balance-api/pkg/api/dto"
 	"balance-api/pkg/store"
 	"encoding/json"
 	"fmt"
@@ -18,7 +19,7 @@ func RouteHandlers() {
 }
 
 func AddMoneyHandler(writer http.ResponseWriter, request *http.Request) {
-	var JsonCome JsonCome
+	var JsonCome dto.JsonCome
 
 	err := json.NewDecoder(request.Body).Decode(&JsonCome)
 
@@ -36,7 +37,7 @@ func AddMoneyHandler(writer http.ResponseWriter, request *http.Request) {
 }
 
 func ReserveMoneyHandler(writer http.ResponseWriter, request *http.Request) {
-	var JsonCome JsonCome
+	var JsonCome dto.JsonCome
 
 	err := json.NewDecoder(request.Body).Decode(&JsonCome)
 	if err != nil {
@@ -58,7 +59,7 @@ func ReserveMoneyHandler(writer http.ResponseWriter, request *http.Request) {
 }
 
 func TransferMoneyHandler(writer http.ResponseWriter, request *http.Request) {
-	var JsonTransfer JsonTransfer
+	var JsonTransfer dto.JsonTransfer
 
 	err := json.NewDecoder(request.Body).Decode(&JsonTransfer)
 	if err != nil {
@@ -81,7 +82,7 @@ func TransferMoneyHandler(writer http.ResponseWriter, request *http.Request) {
 
 func CheckBalanceHandler(writer http.ResponseWriter, request *http.Request) {
 
-	var JsonCome JsonCome
+	var JsonCome dto.JsonCome
 
 	err := json.NewDecoder(request.Body).Decode(&JsonCome)
 	if err != nil {
@@ -112,7 +113,7 @@ func CheckBalanceHandler(writer http.ResponseWriter, request *http.Request) {
 //}
 
 func GetUserReportHandler(writer http.ResponseWriter, request *http.Request) {
-	var JsonReport JsonReport
+	var JsonReport dto.JsonReport
 	err := json.NewDecoder(request.Body).Decode(&JsonReport)
 	if err != nil {
 		writer.Write([]byte("[err] Invalid Json.\n"))

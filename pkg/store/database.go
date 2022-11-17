@@ -8,10 +8,16 @@ import (
 )
 
 func ConnectDataBase() *sql.DB {
-	psqlInfo := fmt.Sprintf("host=%s port=%s user=%s "+
-		"password=%s dbname=%s sslmode=%s",
-		config.GetConfig().DbHost, config.GetConfig().DbPort, config.GetConfig().User,
-		config.GetConfig().Password, config.GetConfig().DbName, config.GetConfig().SSLMode)
+	//psqlInfo := fmt.Sprintf("host=%s port=%s user=%s "+
+	//	"password=%s dbname=%s sslmode=%s",
+	//	config.GetConfig().DbHost, config.GetConfig().DbPort, config.GetConfig().User,
+	//	config.GetConfig().Password, config.GetConfig().DbName, config.GetConfig().SSLMode)
+
+	psqlInfo := fmt.Sprintf("postgres://%v:%v@%v:%v?sslmode=disable",
+		config.GetConfig().User,
+		config.GetConfig().Password,
+		config.GetConfig().DbHost,
+		config.GetConfig().DbPort)
 
 	db, err := sql.Open("postgres", psqlInfo)
 	if err != nil {

@@ -1,4 +1,4 @@
-package api
+package dto
 
 type JsonCome struct {
 	Id    int `json:"Id"`
