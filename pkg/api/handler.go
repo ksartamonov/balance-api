@@ -112,6 +112,24 @@ func CheckBalanceHandler(writer http.ResponseWriter, request *http.Request) {
 //	}
 //}
 
+//func GetUserReportHandler(writer http.ResponseWriter, request *http.Request) {
+//	var JsonReport dto.JsonReport
+//	err := json.NewDecoder(request.Body).Decode(&JsonReport)
+//	if err != nil {
+//		writer.Write([]byte("[err] Invalid Json.\n"))
+//	} else {
+//		http.HandleFunc("/", uploadUserReportHelper)
+//		http.ListenAndServe(":9191", nil)
+//		sqltocsv.Write(writer, store.QueryGetUserReport(JsonReport.Id, JsonReport.Month, JsonReport.Year))
+//	}
+//}
+//
+//func uploadUserReportHelper(writer http.ResponseWriter, request *http.Request) {
+//	//writer.Write([]byte("Report saved in file " + store.QueryGetUserReport(JsonReport.Id, JsonReport.Month, JsonReport.Year)))
+//	writer.Header().Set("Content-type", "text/csv")
+//	writer.Header().Set("Content-Disposition", "attachment; filename=\"report.csv\"")
+//}
+
 func GetUserReportHandler(writer http.ResponseWriter, request *http.Request) {
 	var JsonReport dto.JsonReport
 	err := json.NewDecoder(request.Body).Decode(&JsonReport)
