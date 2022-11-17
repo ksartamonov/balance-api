@@ -118,7 +118,7 @@ func QueryGetUserReport(id int, month int, year int) *sql.Rows {
 
 	rows, err := db.Query(
 		"SELECT OperationId, CASE WHEN SenderId = 0 THEN 'Adding money' WHEN ReceiverId = 0 THEN 'Reserving money' WHEN ReceiverId = $1 THEN 'Incoming Transfer' WHEN SenderId = $1 THEN 'Outgoing Transfer' ELSE 'Unknown operation' END as \"Operation\", CASE WHEN SenderId = $1 AND ReceiverId != 0 THEN ReceiverId WHEN ReceiverId = $1 AND SenderId != 0 THEN SenderId ELSE 0 END as \"To/From\", money as \"Amount\" FROM operations WHERE (ReceiverId = $1 OR SenderId = $1) AND ($2 = date_part('month', transactiontime) AND $3 = date_part('year', transactiontime));", id, month, year)
-	defer rows.Close()
+	//defer rows.Close()
 	if err != nil {
 		log.Println("[err] Query Get User Report error: ", err)
 	}
