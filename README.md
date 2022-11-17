@@ -8,7 +8,7 @@ Microservice accepts requests and sends responses in JSON. Examples of using the
 To start the service (Faced some problems with docker(Connection Refused)):
 1. Cloning the repository:
 ```sh
-git lone https://github.com/ksartamonov/balance-api
+git clone https://github.com/ksartamonov/balance-api
 ```
 2. Configure Postgres database in file pkg/config/config.go 
 3. Run SQL-scripts to create tables(for testing also) build/database/sql/startup.sql
