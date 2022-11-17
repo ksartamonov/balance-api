@@ -14,6 +14,7 @@ git clone https://github.com/ksartamonov/balance-api
 3. Run SQL-scripts to create tables(for testing also) build/database/sql/startup.sql
 4. Launch the program:
 ```sh
+cd balance-api
 go run main.go
 ```
 
