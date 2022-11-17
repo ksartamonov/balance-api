@@ -122,3 +122,7 @@ Result will be available on address:
 ```http
 localhost:9191/report.csv
 ```
+
+Example of the report:
+
+![report](https://github.com/ksartamonov/balance-api/blob/master/images/report-example.png)
