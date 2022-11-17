@@ -5,6 +5,17 @@ Implementation of a microservice for working with user's balance.
 ## Usage
 
 Microservice accepts requests and sends responses in JSON. Examples of using the API are described below:
+To start the service (Hope docker will appear soon):
+1. Cloning the repository:
+```sh
+git lone https://github.com/ksartamonov/balance-api
+```
+2. Configure Postgres database in file pkg/config/config.go 
+3. Run SQL-scripts to create tables(for testing also) build/database/sql/startup.sql
+4. Launch the program:
+```sh
+go run main.go
+```
 
 ### Accrual of money to the balance
 
