@@ -100,7 +100,7 @@ Reply will look like:
 }
 ```
 ### Getting user's operations report
-Via this __POST__-request we can get a report containing all the operations of a specific user:
+Via this __POST__-request we can get a CSV-report containing all the operations of a specific user:
 ```http request
 http://localhost:8080/billing-api/GetUserReport
 ```
