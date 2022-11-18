@@ -10,7 +10,7 @@ To start the service (This branch stores a version that does not use docker due 
 ```sh
 git clone https://github.com/ksartamonov/balance-api
 ```
-2. Configure Postgres database in file pkg/config/config.go 
+2. Configure and create Postgres database (configuration in file pkg/config/config.go) 
 3. Run SQL-scripts to create tables(for testing also) build/database/sql/startup.sql
 4. Launch the program:
 ```sh
