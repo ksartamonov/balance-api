@@ -5,8 +5,8 @@ Implementation of a microservice for working with user's balance.
 ## Usage
 
 Microservice accepts requests and sends responses in JSON. Examples of using the API are described below:
-To start the service (This branch stores a version that does not use docker due to connection problems(need to be fixed). Current progress in using docker can be viewed in the [docker](https://github.com/ksartamonov/balance-api/tree/docker) branch) 
-1. Cloning the repository:
+To start the service.
+1. Clone the repository:
 ```sh
 git clone https://github.com/ksartamonov/balance-api
 ```
